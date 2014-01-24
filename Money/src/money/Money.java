@@ -23,6 +23,15 @@ public class Money {
     public String currency() {
         return fCurrency;
     }
+    
+    
+    public Money add(Money m) {
+      System.out.println("Amount1: " + amount());
+      System.out.println("Amount2: " + m.amount());
+       Money aMoney = new Money(amount()+m.amount(), currency());
+        return aMoney;
+    }
+    
 
     /**
      * @param args the command line arguments

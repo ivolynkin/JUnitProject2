@@ -4,6 +4,7 @@
  */
 package money;
 
+import junit.framework.Assert;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -32,12 +33,7 @@ public class MoneyTest {
     @Test
     public void testAmount() {
         System.out.println("amount");
-        Money instance = null;
-        int expResult = 0;
-        int result = instance.amount();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -46,23 +42,27 @@ public class MoneyTest {
     @Test
     public void testCurrency() {
         System.out.println("currency");
-        Money instance = null;
-        String expResult = "";
-        String result = instance.currency();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
-
+    
+    @Test
+    public void testAdd(){
+            System.out.println("Add Money Test");
+     
+        Money m12CHF= new Money(12, "CHF");  // (1)
+        Money m14CHF= new Money(14, "CHF");        
+        Money expected= new Money(26, "CHF");
+        Money result= m12CHF.add(m14CHF);    // (2)
+        Assert.assertEquals(expected.amount(), result.amount());
+        Assert.assertEquals(expected.currency(), result.currency() );
+         Assert.assertEquals(m12CHF, new Money(12, "CHF"));
+        //Assert.assertEquals(expected, result);
+        // Assert.assertTrue(expected.equals(result)); 
+       //Assert.assertTrue(true);
+    }
+    
     /**
      * Test of main method, of class Money.
      */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        Money.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+   
 }
