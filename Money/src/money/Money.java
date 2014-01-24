@@ -26,17 +26,11 @@ public class Money {
     
     
     public Money add(Money m) {
-      System.out.println("Amount1: " + amount());
-      System.out.println("Amount2: " + m.amount());
-       Money aMoney = new Money(amount()+m.amount(), currency());
-        return aMoney;
+     
+       
+        return new Money(amount()+m.amount(), currency());
     }
     
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+
 }

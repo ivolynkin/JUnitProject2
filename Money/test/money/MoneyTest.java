@@ -16,11 +16,15 @@ import static org.junit.Assert.*;
  */
 public class MoneyTest {
     
+    private Money m12CHF = new Money(12, "CHF") ;
+    private Money m14CHF = new Money(14, "CHF"); 
+    
     public MoneyTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
+        
     }
     
     @AfterClass
@@ -47,18 +51,14 @@ public class MoneyTest {
     
     @Test
     public void testAdd(){
-            System.out.println("Add Money Test");
-     
-        Money m12CHF= new Money(12, "CHF");  // (1)
-        Money m14CHF= new Money(14, "CHF");        
+       
+        System.out.println("Add Money Test");
         Money expected= new Money(26, "CHF");
         Money result= m12CHF.add(m14CHF);    // (2)
-        Assert.assertEquals(expected.amount(), result.amount());
-        Assert.assertEquals(expected.currency(), result.currency() );
-         Assert.assertEquals(m12CHF, new Money(12, "CHF"));
-        //Assert.assertEquals(expected, result);
-        // Assert.assertTrue(expected.equals(result)); 
-       //Assert.assertTrue(true);
+        assertEquals(expected.amount(), result.amount());
+        assertEquals(expected.currency(), result.currency());
+       
+       // assertEquals(expected, result);
     }
     
     /**
